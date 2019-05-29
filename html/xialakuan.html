@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>下拉框</title>
+    <script src="../js/vue.min.js"></script>
+</head>
+<body>
+    <div id='myapp'>
+         <h3>选择明星</h3>
+         <select v-model="linkstart" style="width: 210px;">
+             <option>成龙</option>
+             <option>李小龙</option>
+             <option>刘德华</option>
+             <option>成龙</option>
+             <option>成龙</option>
+             <option>成龙</option>
+         </select>
+         <h3>我的全明星</h3>
+         <select v-model="linkstarts" multiple style="width: 210px;">
+             <option>成龙</option>
+             <option>李小龙</option>
+             <option>刘德华</option>
+             <option>dfs</option>
+             <option>efs</option>
+             <option>fgd</option>
+             <option>ewr</option>
+         </select>
+         <h3>选择结果</h3>
+         <p>我喜欢的：{{linkstart}}</p>
+         <p>我的全明星：{{linkstarts}}</p>
+    </div>
+    <script>
+        var myapp=new Vue({
+            el:'#myapp',
+            data:{
+                linkstart:null,
+                linkstarts:[],
+            },
+            methods:{
+
+            },
+        });
+    </script>
+</body>
+</html>

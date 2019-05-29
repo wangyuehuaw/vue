@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <script src="../js/vue.min.js"></script>
+    </head>
+    <body>
+        <div id="myapp">
+            <h3>游戏列表</h3>
+            <div v-if="seen"> 2019最新发布</div>
+            <ol>
+                <li v-for="game in games">{{game.title}}/{{game.price}}元</li>
+            </ol>
+        </div>
+        <script>
+             var myapp=new Vue({
+                 el:'#myapp'
+                 ,data:{
+                     seen:false,
+                     games:[
+                         {title:'植物大战僵尸',
+                            price:500},
+                        {title:'开心消消乐',
+                            price:400},
+                        {title:'宾果消消消',
+                            price:500},
+                     ]
+                 }
+             })
+        </script>
+    </body>
+</html>

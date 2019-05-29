@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件处理器</title>
+    <script src="../js/vue.min.js"></script>
+</head>
+<body>
+    <!--页面元素的时间绑定，（click,keyup,load等）-->
+    <div id="myapp">
+        <h1>事件处理器</h1>
+        <input id="txtname" v-on:kerup="txtKeyup($event)">
+        <button id="btnok" v-on:click="btnClick($event)">ok</button>
+    </div>
+    <script>
+        var myapp=new Vue({
+            el:'#myapp',
+            data:{},
+            methods:{
+                txtKeyup:function(event){
+                    this.debugLog(event);
+                },
+                btnClick:function(event){
+                    this.debugLog(event);
+                },
+                debugLog:function(event){
+                    console.log(
+                        event.srcElement.tagName,
+                        event.srcElement.id,
+                        event.srcElement.innerHTML,
+                        event.key?event.key:""
+                    );
+                },
+            },
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>观察属性</title>
+    <script src="../js/vue.min.js"></script>
+</head>
+<body>
+    <div id="myapp">
+        <p>此商品价格为：{{price}},含税收价格为：{{priceInTax}}</p>
+        <button @click="btnclick(1000)">加价1000</button>
+    </div>
+    <script>
+        var myapp=new Vue({
+            el:'#myapp',
+            data:{
+                price:0,
+                priceInTax:0,
+            },
+            watch:{
+                price:function(newVal,oldVal){
+                    console.log(newVal,oldVal);
+                    this.priceInTax=Math.round(this.price*1.002);
+                },
+            },
+            methods:{
+                btnclick:function(newPrice){
+                    this.price+=newPrice;
+                },
+            },
+        });
+        myapp.price=2000;
+    </script>
+</body>
+</html>

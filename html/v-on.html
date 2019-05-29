@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <script src="../js/vue.min.js"></script>
+    </head>
+    <body>
+        <!--按钮事件
+        为页面元素绑定各种事件，（keydown,keyup,click,dbclick,load,atd）
+        -->
+        <div id="myapp">
+            <p>最喜欢的电影：{{myfilm}}</p>
+            <button v-on:click="btnClick('肖申克的救赎')">肖申克的救赎</button>
+            <button v-on:click="btnClick('阿甘正传')">阿甘正传</button>
+            <button v-on:click="btnClick('流浪地球')">流浪地球</button>
+            <button @click="btnClick('复仇者联盟')">复仇者联盟</button>
+        </div>
+        <script>
+            var myapp=new Vue({
+                el:'#myapp',
+                data:{
+                    myfilm:'霸王别姬'
+                },
+                methods:{
+                    btnClick:function(pname){
+                        this.myfilm=pname;
+                    },
+                },
+            });
+        </script>
+    </body>
+</html>

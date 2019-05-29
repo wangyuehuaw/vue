@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+     <script src="../js/vue.min.js"></script>
+    </head>
+    <body>
+       <div id="myapp">
+            <p>最爱看的电影：{{myfilm}}</p>
+            <input v-model="myfilm">
+       </div>
+       <script>
+           var myapp=new Vue({
+               el:"#myapp",
+               data:{
+                myfilm:'肖申克的救赎'
+               },
+           });
+       </script>
+    </body>
+</html>

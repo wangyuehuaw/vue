@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单控件绑定</title>
+    <script src="../js/vue.min.js"></script>
+</head>
+<body>
+    <div id="myapp">
+        <h1>表单控件绑定</h1>
+        <input type="text" v-model="message" placeholder="编辑我啊">
+        <p>Message is:{{message}}</p>
+    </div>
+    <script>
+        var myapp=new Vue({
+            el:'#myapp',
+            data:{
+                message:"超级马里奥",
+            },
+            methods:{
+
+            },
+        })
+    </script>
+</body>
+</html>

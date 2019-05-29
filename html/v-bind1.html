@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css的class对象绑定</title>
+    <script src="../js/vue.min.js"></script>
+    <style>
+       .active{
+           color:pink;
+       }
+       .big{
+           color: darksalmon;
+       }
+    </style>
+</head>
+<body>
+    <div id="myapp">
+        <div :class="myClass">红色文本1</div>
+        <button @click="btnclick">改变颜色</button>
+    </div>
+    <script>
+        var myapp=new Vue({
+            el:'#myapp',
+            data:{
+                myClass:{
+                    active:true,
+                    big:true,
+                },
+            },
+            methods:{
+                btnclick:function(){
+                    this.myClass.active=!this.myClass.active;
+                    this.myClass.big=!this.myClass.big;
+                },
+            },
+        });
+    </script>
+</body>
+</html>

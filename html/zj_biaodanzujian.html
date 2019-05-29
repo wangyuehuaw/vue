@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单组件</title>
+    <script src="../js/vue.min.js"></script>
+</head>
+<body>
+    <div id="myapp">
+        <h1>2019上映电影</h1>
+        <table border="1">
+            <tr>
+                <td>编号</td>
+                <td>电影名称</td>
+            </tr>
+            <tr is="my-row1"></tr>
+            <tr is="my-row2"></tr>
+            <tr is="my-row3"></tr>
+        </table>
+    </div>
+    <script>
+        Vue.component('my-row1',{
+            template:'<tr><td>(1)</td><td>流浪地球</td></tr>'
+        });
+        Vue.component('my-row2',{
+            template:'<tr><td>(2)</td><td>老师，好</td></tr>'
+        })
+        Vue.component('my-row3',{
+            template:'<tr><td>(3)</td><td>何以为家</td></tr>'
+        })
+        var myapp=new Vue({
+            el:'#myapp',
+            data:{
+
+            },
+            methods:{
+
+            },
+        });
+    </script>
+</body>
+</html>

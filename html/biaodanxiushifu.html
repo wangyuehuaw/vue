@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单修饰符</title>
+    <script src="../js/vue.min.js"></script>
+</head>
+<body>
+    <!--
+        .lazy(用户输入内容时不做绑定数据的更新处理，在控件的onckange事件中更新绑定的变量)
+        .number（将用户输入的内容转换为数值类型，如果用户输入非数值的时候则返回nun）
+        .trim(自动去掉用户输入内容两端的空格)
+    -->
+    <div id="myapp">
+        <h2>用户注册</h2>
+        <div>
+            <label for="username">用户：</label>
+            <input type="text" id="username" v-model.lazy="username" @change="checkusername">
+            <span v-if="checkusernameok">可注册</span>
+        </div>
+        <div>
+            <label for="age">年龄:</label>
+            <input type="number" id="age" v-model.number="age">
+        </div>
+        <div>
+            <label for="contexr">个人简介：</label>
+            <textarea id="context" v-model.trim="context" cols="52" roes="5"></textarea>
+        </div>
+        <h2>信息区</h2>
+        <p>{{username}}</p>
+        <p>{{age}}</p>
+        <p><pre>{{context}}</pre></p>
+    </div>
+    <script>
+        var myapp=new Vue({
+            el:'#myapp',
+            data:{
+                username:"",
+                checkusernameok:false,
+                age:"",
+                content:"",
+            },
+            methods:{
+                checkusername:function(){
+                    if(this.username.length>0)this.checkusernameok=true;
+                    else this.checkusernameok=false;
+                },
+            },
+        });
+    </script>
+</body>
+</html>

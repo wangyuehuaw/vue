@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script src="../js/vue.min.js"></script>
+    </head>
+    <body>
+        <div id="myapp">
+            <ol>
+                <game-item v-for="item in film" v-bind:game="item"></game-item>
+            </ol>
+        </div>
+        <script>
+            //组件定义：game-item
+            Vue.component('game-item',{
+                props:['game'],
+                template:'<li>{{game.title}}</li>'
+            });
+            //vue对象初始化
+            var myapp = new Vue({
+                el:'#myapp',
+                data:{
+                    film:[
+                        {title:'肖申克的救赎'},
+                        {title:'流浪地球'},
+                        {title:'老师，好'}
+                    ]
+                }
+            });
+        </script>
+    </body>
+</html>

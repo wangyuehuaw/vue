@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script src="../js/vue.min.js"></script>
+    </head>
+    <body>
+        <div id="myapp">
+            <p>{{message}}</p>
+            <p>{{message | toupper}}</p>
+            <p>vue.js的学习进度是{{num}}({{num | topercentage}})</p>
+        </div>
+        <script>
+            var myapp=new Vue({
+                el:'#myapp',
+                data:{
+                    message:'hello vue.js.',
+                    num:'0.3'
+                },
+                filters:{
+                    toupper:function(value){
+                        return value.toUpperCase();
+                    },
+                    topercentage:function(value){
+                        return value*100+'%';
+                    },
+                },
+            });
+        </script>
+    </body>    
+</html>

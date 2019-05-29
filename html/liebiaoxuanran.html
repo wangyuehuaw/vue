@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>列表渲染</title>
+    <script src="../js/vue.min.js"></script>
+</head>
+<body>
+    <!--循环数组元素，整理内容显示在页面上-->
+    <div id="myapp">
+        <ul>
+            <li v-for="(game,index) in games">({{index+1}}) {{game.title}}/售价：{{game.price}}</li>
+        </ul>
+    </div>
+    <script>
+        var myapp=new Vue({
+            el:'#myapp',
+            data:{
+                games:[
+                    {title:"我的世界",price:200},
+                    {title:"我的世界",price:200},
+                    {title:"我的世界",price:200},
+                ]
+            },
+        });
+    </script>
+</body>
+</html>
